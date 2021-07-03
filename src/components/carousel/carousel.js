@@ -9,7 +9,7 @@ const Carousel = ({ children }) => {
     carouselRef.current.addEventListener("scroll", (e) => {
       setPercent(Math.ceil(e.target.scrollLeft) / (e.target.scrollWidth - e.target.offsetWidth));
     });
-    carouselRef.current.addEventListener('click', e => {
+    carouselRef.current.addEventListener("click", e => {
       if(e.target !== e.currentTarget) {
         e.currentTarget.scrollBy({
           left: Math.floor(e.target.getBoundingClientRect().left - (e.currentTarget.offsetWidth - e.target.getBoundingClientRect().width) / 2)
