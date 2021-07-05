@@ -12,11 +12,9 @@ export const CarrouselCards = styled.div`
 export const Wrapper = styled.div`
   display: grid;
   overflow-x: auto;
-  scroll-behavior: smooth;
   grid-auto-flow: column;
   grid-template-rows: 1fr;
   column-gap: 40px;
-  scroll-snap-type: both mandatory;
   padding-left: 4vw;
 
   &::-webkit-scrollbar {
