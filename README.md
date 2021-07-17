@@ -1,6 +1,6 @@
 # NextJs Starter Template
 
-# **[Click to View](https://prim-u.vercel.app)**
+# **[Click to View](https://prim-u-izin0qdwo-muddoo.vercel.app/)**
 
 ## Introduction
 
