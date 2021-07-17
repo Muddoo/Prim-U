@@ -36,7 +36,6 @@ const Carousel = ({ children }) => {
         carouselRef.current.addEventListener("click", centerCard);
         pressTimer = setTimeout(() => {
           carouselRef.current.style.cursor = "grabbing";
-          return;
         }, 100);
       });
 
