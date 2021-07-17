@@ -27,20 +27,26 @@ const Carousel = ({ children }) => {
       let isDown = false;
       let startX;
       let scrollLeft;
+      let pressTimer;
 
       carouselRef.current.addEventListener("mousedown", (e) => {
         isDown = true;
         startX = e.pageX - carouselRef.current.offsetLeft;
         scrollLeft = carouselRef.current.scrollLeft;
         carouselRef.current.addEventListener("click", centerCard);
+        pressTimer = setTimeout(() => carouselRef.current.style.cursor = 'grabbing', 100);
       });
 
       carouselRef.current.addEventListener("mouseleave", () => {
         isDown = false;
+        carouselRef.current.style.cursor = 'pointer'
+        clearTimeout(pressTimer)
       });
 
       carouselRef.current.addEventListener("mouseup", () => {
         isDown = false;
+        carouselRef.current.style.cursor = 'pointer'
+        clearTimeout(pressTimer)
       });
 
       carouselRef.current.addEventListener("mousemove", (e) => {
@@ -50,6 +56,7 @@ const Carousel = ({ children }) => {
         const scrollX = (x - startX) * 1;
 
         carouselRef.current.style.scrollSnapType = "none";
+        carouselRef.current.style.cursor = 'grabbing'
         carouselRef.current.removeEventListener("click", centerCard);
         carouselRef.current.scrollLeft = scrollLeft - scrollX;
       });
