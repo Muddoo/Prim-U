@@ -34,7 +34,10 @@ const Carousel = ({ children }) => {
         startX = e.pageX - carouselRef.current.offsetLeft;
         scrollLeft = carouselRef.current.scrollLeft;
         carouselRef.current.addEventListener("click", centerCard);
-        pressTimer = setTimeout(() => (carouselRef.current.style.cursor = "grabbing"), 100);
+        pressTimer = setTimeout(() => {
+          carouselRef.current.style.cursor = "grabbing";
+          return;
+        }, 100);
       });
 
       carouselRef.current.addEventListener("mouseleave", () => {
